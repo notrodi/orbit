@@ -1,0 +1,16 @@
+{
+  "dest": "public/icons",
+  "mode": {
+    "symbol": {
+      "dest": ".",
+      "sprite": "sprite.svg",
+      "inline": false,
+      "example": false
+    }
+  },
+  "shape": {
+    "id": {
+      "generator": "%s"
+    }
+  }
+}
