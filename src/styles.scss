@@ -4,3 +4,7 @@
 @use 'shadows';
 @use 'sizes';
 @use 'borders';
+
+html {
+  background: var(--color-background);
+}
