@@ -5,12 +5,12 @@ type LogoSize = 'medium' | 'large';
 
 @Component({
   selector: 'app-logo',
+  imports: [Icon],
   template: `
     <app-icon name="orbit-logo" [size]="iconSize()"></app-icon>
     <span>RBIT</span>
   `,
   styleUrl: './logo.scss',
-  imports: [Icon],
   host: { '[class.logo_large]': `size() === 'large'` },
 })
 export class Logo {
