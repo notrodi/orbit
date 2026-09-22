@@ -16,9 +16,9 @@ import { IconName } from './icon.types';
   `,
 })
 export class Icon {
-  name = input.required<IconName>();
-  size = input(24);
-  label = input<string>();
+  readonly name = input.required<IconName>();
+  readonly size = input(24);
+  readonly label = input<string>();
 
-  protected href = computed(() => `icons/sprite.svg#${this.name()}`);
+  protected readonly href = computed(() => `icons/sprite.svg#${this.name()}`);
 }
