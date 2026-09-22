@@ -1,0 +1,13 @@
+@use 'typography' as *;
+
+:host {
+  @include logo-medium;
+
+  display: flex;
+  align-items: center;
+  color: var(--color-text-secondary);
+}
+
+:host(.logo_large) {
+  @include logo-large;
+}
