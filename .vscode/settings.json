@@ -4,5 +4,6 @@
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
   "files.trimFinalNewlines": true,
+  "files.eol": "\n",
   "js/ts.preferences.importModuleSpecifier": "non-relative"
 }
