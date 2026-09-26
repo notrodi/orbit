@@ -1,0 +1,16 @@
+:host {
+  display: grid;
+  grid-template-columns: var(--sidebar-width) minmax(0, 1fr) var(--widgets-panel-width);
+  width: 100%;
+}
+
+nav,
+main,
+aside {
+  overflow-y: auto;
+}
+
+nav,
+aside {
+  background: var(--color-surface);
+}
