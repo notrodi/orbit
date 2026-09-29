@@ -8,6 +8,6 @@
   color: var(--color-text-secondary);
 }
 
-:host(.logo_large) {
+:host(.large) {
   @include logo-large;
 }

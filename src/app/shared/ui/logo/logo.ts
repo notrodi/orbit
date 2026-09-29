@@ -14,7 +14,7 @@ type LogoSize = 'medium' | 'large';
   host: {
     role: 'img',
     'aria-label': 'Orbit',
-    '[class.logo_large]': `size() === 'large'`,
+    '[class.large]': `size() === 'large'`,
   },
 })
 export class Logo {
