@@ -11,7 +11,11 @@ type LogoSize = 'medium' | 'large';
     <span>RBIT</span>
   `,
   styleUrl: './logo.scss',
-  host: { '[class.logo_large]': `size() === 'large'` },
+  host: {
+    role: 'img',
+    'aria-label': 'Orbit',
+    '[class.logo_large]': `size() === 'large'`,
+  },
 })
 export class Logo {
   readonly size = input<LogoSize>('medium');
