@@ -1,10 +1,13 @@
 import { Routes } from '@angular/router';
+import { desktopOnlyGuard } from '@core/guards/desktop-only-guard';
 import { Shell } from '@layout/shell/shell';
+import { isTouchDevice } from '@shared/utils/is-touch-device';
 
 export const routes: Routes = [
   {
     path: '',
     component: Shell,
+    canMatch: [desktopOnlyGuard],
     children: [],
   },
   {
@@ -15,6 +18,6 @@ export const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: '',
+    redirectTo: () => (isTouchDevice() ? '/under-construction' : '/'),
   },
 ];
