@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { Sidebar } from '@layout/sidebar/sidebar';
 
 @Component({
   selector: 'app-shell',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, Sidebar],
   template: `
-    <nav aria-label="Main"></nav>
+    <app-sidebar></app-sidebar>
 
     <main>
       <router-outlet />

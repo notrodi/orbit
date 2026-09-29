@@ -4,13 +4,22 @@
   width: 100%;
 }
 
-nav,
+app-sidebar,
 main,
 aside {
+  padding-block: var(--size-6);
   overflow-y: auto;
 }
 
-nav,
+app-sidebar,
 aside {
   background: var(--color-surface);
+}
+
+main {
+  padding-inline: var(--size-5);
+}
+
+aside {
+  padding-inline: var(--size-4);
 }
