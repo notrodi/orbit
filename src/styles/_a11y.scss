@@ -1,0 +1,11 @@
+$focus-ring-width: 2px;
+
+@mixin focus-ring($inset: false) {
+  outline: $focus-ring-width solid var(--color-focus-ring);
+
+  @if $inset {
+    outline-offset: -$focus-ring-width;
+  } @else {
+    outline-offset: $focus-ring-width;
+  }
+}
