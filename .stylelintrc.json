@@ -2,6 +2,14 @@
   "extends": ["stylelint-config-standard-scss", "stylelint-config-clean-order"],
   "rules": {
     "color-hex-length": "long",
+    "at-rule-empty-line-before": [
+      "always",
+      {
+        "ignore": ["first-nested", "blockless-after-same-name-blockless", "after-comment"],
+        "ignoreAtRules": ["else"],
+        "severity": "warning"
+      }
+    ],
     "order/order": [
       [
         { "type": "at-rule", "name": "import" },
