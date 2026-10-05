@@ -1,0 +1,45 @@
+@use 'typography' as *;
+@use 'a11y' as *;
+
+:host {
+  display: block;
+}
+
+a {
+  @include label-large;
+
+  display: flex;
+  gap: var(--size-3);
+  align-items: center;
+
+  padding: var(--size-3) var(--sidebar-inset-inline);
+
+  color: var(--color-text-secondary);
+  text-decoration: none;
+
+  transition:
+    background-color 0.2s,
+    color 0.2s;
+
+  &:any-link:hover {
+    color: var(--color-text-primary);
+    background: var(--color-surface-hover);
+  }
+
+  &:any-link:active {
+    background: var(--color-surface-active);
+  }
+
+  &:focus-visible {
+    @include focus-ring($inset: true);
+  }
+
+  &[aria-disabled='true'] {
+    cursor: default;
+    opacity: 0.4;
+  }
+}
+
+.wrench {
+  margin-inline-start: auto;
+}
