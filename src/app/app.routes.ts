@@ -8,7 +8,18 @@ export const routes: Routes = [
     path: '',
     component: Shell,
     canMatch: [desktopOnlyGuard],
-    children: [],
+    children: [
+      {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: 'projects',
+      },
+      {
+        path: 'projects',
+        loadChildren: () =>
+          import('@features/projects/projects.routes').then((m) => m.PROJECTS_ROUTES),
+      },
+    ],
   },
   {
     path: 'under-construction',
