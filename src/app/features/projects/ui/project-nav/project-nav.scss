@@ -1,4 +1,5 @@
 @use 'typography' as *;
+@use 'a11y' as *;
 
 :host {
   display: block;
@@ -37,6 +38,10 @@ a {
 
   &:not([aria-current='page']):active {
     color: var(--color-text-secondary-active);
+  }
+
+  &:focus-visible {
+    @include focus-ring($inset: true);
   }
 
   &[aria-current='page'] {
