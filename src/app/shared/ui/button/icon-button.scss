@@ -1,0 +1,22 @@
+@use 'a11y' as *;
+
+:host {
+  color: var(--color-brand-default);
+  transition: color 0.2s;
+
+  &:enabled:hover {
+    color: var(--color-brand-hover);
+  }
+
+  &:enabled:active {
+    color: var(--color-brand-active);
+  }
+
+  &:focus-visible {
+    @include focus-ring;
+  }
+
+  &:disabled {
+    opacity: 0.4;
+  }
+}
