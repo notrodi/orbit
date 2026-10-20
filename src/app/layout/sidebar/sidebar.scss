@@ -10,6 +10,18 @@ app-logo {
   margin-inline: var(--sidebar-inset-inline);
 }
 
+app-project-nav {
+  &::after {
+    content: '';
+
+    display: block;
+
+    margin-block: var(--size-2);
+    margin-inline: var(--sidebar-inset-inline);
+    border-block-end: var(--border-width) solid var(--color-border-button);
+  }
+}
+
 ul {
   list-style: none;
 }

@@ -1,0 +1,68 @@
+@use 'typography' as *;
+
+:host {
+  display: block;
+}
+
+h2 {
+  @include body-medium;
+
+  margin-block-end: var(--size-2);
+  margin-inline: var(--sidebar-inset-inline);
+  color: var(--color-text-secondary);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  @include label-large;
+
+  position: relative;
+
+  display: block;
+
+  padding-block: var(--size-2);
+  padding-inline: var(--sidebar-inset-inline);
+
+  color: var(--color-text-secondary);
+  text-decoration: none;
+
+  transition: color 0.2s;
+
+  &:hover {
+    color: var(--color-text-secondary-hover);
+  }
+
+  &:not([aria-current='page']):active {
+    color: var(--color-text-secondary-active);
+  }
+
+  &[aria-current='page'] {
+    color: var(--color-text-brand);
+
+    &::before {
+      content: '';
+
+      position: absolute;
+      inset-block: 0;
+      inset-inline-start: 0;
+
+      inline-size: var(--size-2);
+      block-size: var(--size-5);
+      margin-block: auto;
+      border-start-end-radius: var(--size-1);
+      border-end-end-radius: var(--size-1);
+
+      background: var(--color-brand-default);
+    }
+  }
+}
+
+p {
+  @include label-medium;
+
+  margin-inline: var(--sidebar-inset-inline);
+  color: var(--color-text-tertiary);
+}
