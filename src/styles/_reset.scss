@@ -31,3 +31,14 @@ select,
 optgroup {
   font: inherit;
 }
+
+button {
+  cursor: pointer;
+  border: none;
+  color: inherit;
+  background: none;
+
+  &:disabled {
+    cursor: default;
+  }
+}
