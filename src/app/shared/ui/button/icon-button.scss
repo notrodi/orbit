@@ -1,16 +1,9 @@
 @use 'a11y' as *;
 
 :host {
-  color: var(--color-brand-default);
-  transition: color 0.2s;
-
-  &:enabled:hover {
-    color: var(--color-brand-hover);
-  }
-
-  &:enabled:active {
-    color: var(--color-brand-active);
-  }
+  transition:
+    color 0.2s,
+    background-color 0.2s;
 
   &:focus-visible {
     @include focus-ring;
@@ -18,5 +11,33 @@
 
   &:disabled {
     opacity: 0.4;
+  }
+
+  &.default {
+    padding: var(--size-1);
+    border-radius: 50%;
+    color: var(--color-text-tertiary);
+
+    &:enabled:hover {
+      color: var(--color-text-secondary);
+      background: var(--color-surface-hover);
+    }
+
+    &:enabled:active {
+      color: var(--color-text-primary);
+      background: var(--color-surface-active);
+    }
+  }
+
+  &.primary {
+    color: var(--color-brand-default);
+
+    &:enabled:hover {
+      color: var(--color-brand-hover);
+    }
+
+    &:enabled:active {
+      color: var(--color-brand-active);
+    }
   }
 }
