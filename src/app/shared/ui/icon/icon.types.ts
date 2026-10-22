@@ -1,2 +1,2 @@
 export type IconName =
-  'orbit-logo' | 'rocket' | 'checklist' | 'circular-arrow' | 'wrench' | 'plus-square';
+  'orbit-logo' | 'rocket' | 'checklist' | 'circular-arrow' | 'wrench' | 'plus-square' | 'cross';
