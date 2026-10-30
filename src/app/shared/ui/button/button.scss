@@ -1,0 +1,48 @@
+@use 'button-base' as *;
+@use 'typography' as *;
+
+:host {
+  @include button-base;
+  @include label-medium;
+
+  display: inline-flex;
+  gap: var(--size-2);
+  align-items: center;
+  justify-content: center;
+
+  block-size: var(--size-6);
+  padding-inline: var(--size-4);
+  border-radius: var(--size-2);
+
+  &.default {
+    border: var(--border-width) solid var(--color-border-button);
+    color: var(--color-text-secondary);
+
+    &:enabled:hover {
+      border-color: var(--color-brand-default);
+      color: var(--color-text-inverse-secondary);
+      background: var(--color-brand-default);
+    }
+
+    &:enabled:active {
+      border-color: var(--color-brand-hover);
+      color: var(--color-text-inverse-primary);
+      background: var(--color-brand-hover);
+    }
+  }
+
+  &.primary {
+    color: var(--color-text-inverse-secondary);
+    background: var(--color-brand-default);
+
+    &:enabled:hover {
+      color: var(--color-text-inverse-primary);
+      background: var(--color-brand-hover);
+    }
+
+    &:enabled:active {
+      color: var(--color-text-primary);
+      background: var(--color-brand-active);
+    }
+  }
+}
