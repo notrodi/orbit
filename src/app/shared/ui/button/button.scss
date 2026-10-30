@@ -15,34 +15,34 @@
   border-radius: var(--size-2);
 
   &.default {
-    border: var(--border-width) solid var(--color-border-button);
-    color: var(--color-text-secondary);
+    border: var(--border-width) solid var(--color-border-default);
+    color: var(--color-text-default);
 
     &:enabled:hover {
       border-color: var(--color-brand-default);
-      color: var(--color-text-inverse-secondary);
+      color: var(--color-text-inverse-default);
       background: var(--color-brand-default);
     }
 
     &:enabled:active {
-      border-color: var(--color-brand-hover);
-      color: var(--color-text-inverse-primary);
-      background: var(--color-brand-hover);
+      border-color: var(--color-brand-strong);
+      color: var(--color-text-inverse-strong);
+      background: var(--color-brand-strong);
     }
   }
 
   &.primary {
-    color: var(--color-text-inverse-secondary);
+    color: var(--color-text-inverse-default);
     background: var(--color-brand-default);
 
     &:enabled:hover {
-      color: var(--color-text-inverse-primary);
-      background: var(--color-brand-hover);
+      color: var(--color-text-inverse-strong);
+      background: var(--color-brand-strong);
     }
 
     &:enabled:active {
-      color: var(--color-text-primary);
-      background: var(--color-brand-active);
+      color: var(--color-text-strong);
+      background: var(--color-brand-stronger);
     }
   }
 }

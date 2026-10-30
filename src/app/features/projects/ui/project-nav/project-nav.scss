@@ -10,7 +10,7 @@ h2 {
 
   margin-block-end: var(--size-2);
   margin-inline: var(--sidebar-inset-inline);
-  color: var(--color-text-secondary);
+  color: var(--color-text-default);
 }
 
 ul {
@@ -27,17 +27,17 @@ a {
   padding-block: var(--size-2);
   padding-inline: var(--sidebar-inset-inline);
 
-  color: var(--color-text-secondary);
+  color: var(--color-text-default);
   text-decoration: none;
 
   transition: color 0.2s;
 
   &:hover {
-    color: var(--color-text-secondary-hover);
+    color: var(--color-text-brand-default);
   }
 
   &:not([aria-current='page']):active {
-    color: var(--color-text-secondary-active);
+    color: var(--color-text-brand-strong);
   }
 
   &:focus-visible {
@@ -45,7 +45,7 @@ a {
   }
 
   &[aria-current='page'] {
-    color: var(--color-text-brand);
+    color: var(--color-text-brand-default);
 
     &::before {
       content: '';
@@ -69,5 +69,5 @@ p {
   @include label-medium;
 
   margin-inline: var(--sidebar-inset-inline);
-  color: var(--color-text-tertiary);
+  color: var(--color-text-subtle);
 }

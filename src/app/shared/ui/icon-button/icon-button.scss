@@ -6,16 +6,16 @@
   &.default {
     padding: var(--size-1);
     border-radius: 50%;
-    color: var(--color-text-tertiary);
+    color: var(--color-text-subtle);
 
     &:enabled:hover {
-      color: var(--color-text-secondary);
-      background: var(--color-surface-hover);
+      color: var(--color-text-default);
+      background: var(--color-surface-brand-default);
     }
 
     &:enabled:active {
-      color: var(--color-text-primary);
-      background: var(--color-surface-active);
+      color: var(--color-text-strong);
+      background: var(--color-surface-brand-strong);
     }
   }
 
@@ -23,11 +23,11 @@
     color: var(--color-brand-default);
 
     &:enabled:hover {
-      color: var(--color-brand-hover);
+      color: var(--color-brand-strong);
     }
 
     &:enabled:active {
-      color: var(--color-brand-active);
+      color: var(--color-brand-stronger);
     }
   }
 }

@@ -14,7 +14,7 @@ a {
 
   padding: var(--size-3) var(--sidebar-inset-inline);
 
-  color: var(--color-text-secondary);
+  color: var(--color-text-default);
   text-decoration: none;
 
   transition:
@@ -22,12 +22,12 @@ a {
     color 0.2s;
 
   &:any-link:hover {
-    color: var(--color-text-primary);
-    background: var(--color-surface-hover);
+    color: var(--color-text-strong);
+    background: var(--color-surface-brand-default);
   }
 
   &:any-link:active {
-    background: var(--color-surface-active);
+    background: var(--color-surface-brand-strong);
   }
 
   &:focus-visible {

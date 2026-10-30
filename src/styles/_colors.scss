@@ -25,40 +25,42 @@
 
 // semantic
 :root {
+  // Scales:
+  // - neutral (text, border): by visibility on the background, each step more visible
+  // - brand (surface-brand-*, text-brand-*, brand): by saturation, each step darker
+
   // surface
   --color-background: var(--gray-300);
   --color-surface: var(--gray-400);
-  --color-surface-hover: var(--purple-100-20);
-  --color-surface-active: var(--purple-100-40);
+  --color-surface-brand-default: var(--purple-100-20);
+  --color-surface-brand-strong: var(--purple-100-40);
+
+  // overlay
+  --color-overlay: var(--gray-500-40);
 
   // text
-  --color-text-primary: var(--gray-000);
-  --color-text-secondary: var(--gray-100);
-  --color-text-secondary-hover: var(--purple-100);
-  --color-text-secondary-active: var(--purple-200);
-  --color-text-tertiary: var(--gray-200);
-  --color-text-inverse-primary: var(--gray-400);
-  --color-text-inverse-secondary: var(--gray-300);
-  --color-text-brand: var(--purple-100);
+  --color-text-subtle: var(--gray-200);
+  --color-text-default: var(--gray-100);
+  --color-text-strong: var(--gray-000);
+  --color-text-inverse-default: var(--gray-300);
+  --color-text-inverse-strong: var(--gray-400);
+  --color-text-brand-default: var(--purple-100);
+  --color-text-brand-strong: var(--purple-200);
 
   // border
-  --color-border-button: var(--gray-100);
-  --color-border-input: var(--gray-200);
+  --color-border-subtle: var(--gray-200);
+  --color-border-default: var(--gray-100);
 
   // focus
   --color-focus-ring: var(--purple-100);
 
   // brand
   --color-brand-default: var(--purple-100);
-  --color-brand-hover: var(--purple-200);
-  --color-brand-active: var(--purple-300);
-  --color-brand-disabled: var(--purple-100-40);
+  --color-brand-strong: var(--purple-200);
+  --color-brand-stronger: var(--purple-300);
 
   // priority
   --color-priority-low: var(--green-100);
   --color-priority-medium: var(--orange-100);
   --color-priority-high: var(--red-100);
-
-  // overlay
-  --color-overlay: var(--gray-500-40);
 }
