@@ -12,10 +12,11 @@
 
   block-size: var(--size-6);
   padding-inline: var(--size-4);
+  border: var(--border-width) solid transparent;
   border-radius: var(--size-2);
 
   &.default {
-    border: var(--border-width) solid var(--color-border-default);
+    border-color: var(--color-border-default);
     color: var(--color-text-default);
 
     &:enabled:hover {
