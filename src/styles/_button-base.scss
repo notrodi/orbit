@@ -1,0 +1,16 @@
+@use 'a11y' as *;
+
+@mixin button-base {
+  transition:
+    color 0.2s,
+    background-color 0.2s,
+    border-color 0.2s;
+
+  &:focus-visible {
+    @include focus-ring;
+  }
+
+  &:disabled {
+    opacity: 0.4;
+  }
+}

@@ -1,5 +1,5 @@
 import { Component, ElementRef, input, output, viewChild } from '@angular/core';
-import { IconButton } from '@shared/ui/button/icon-button';
+import { IconButton } from '@shared/ui/icon-button/icon-button';
 
 @Component({
   selector: 'app-dialog',

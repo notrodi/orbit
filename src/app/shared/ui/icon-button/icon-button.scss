@@ -1,17 +1,7 @@
-@use 'a11y' as *;
+@use 'button-base' as *;
 
 :host {
-  transition:
-    color 0.2s,
-    background-color 0.2s;
-
-  &:focus-visible {
-    @include focus-ring;
-  }
-
-  &:disabled {
-    opacity: 0.4;
-  }
+  @include button-base;
 
   &.default {
     padding: var(--size-1);
