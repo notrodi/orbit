@@ -24,19 +24,24 @@ canvas {
   max-width: 100%;
 }
 
-input,
 button,
+input,
 textarea,
 select,
 optgroup {
   font: inherit;
 }
 
-button {
-  cursor: pointer;
+button,
+input,
+textarea {
   border: none;
   color: inherit;
   background: none;
+}
+
+button {
+  cursor: pointer;
 
   &:disabled {
     cursor: default;
