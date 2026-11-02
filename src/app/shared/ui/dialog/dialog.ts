@@ -1,14 +1,15 @@
 import { Component, ElementRef, input, output, viewChild } from '@angular/core';
+import { KeepFocus } from '@shared/directives/keep-focus';
 import { IconButton } from '@shared/ui/icon-button/icon-button';
 
 @Component({
   selector: 'app-dialog',
-  imports: [IconButton],
+  imports: [IconButton, KeepFocus],
   template: `
     <dialog #dialog (close)="closed.emit()">
       <header>
         <h2>{{ heading() }}</h2>
-        <button appIconButton icon="cross" label="Close" (click)="close()"></button>
+        <button appIconButton appKeepFocus icon="cross" label="Close" (click)="close()"></button>
       </header>
       <ng-content></ng-content>
     </dialog>
