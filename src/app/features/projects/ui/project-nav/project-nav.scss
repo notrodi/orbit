@@ -5,11 +5,18 @@
   display: block;
 }
 
-h2 {
-  @include body-medium;
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
   margin-block-end: var(--size-2);
   margin-inline: var(--sidebar-inset-inline);
+}
+
+h2 {
+  @include body-medium;
+
   color: var(--color-text-default);
 }
 
