@@ -46,16 +46,7 @@ export class ProjectDialog {
     },
     {
       submission: {
-        action: async () => {
-          const { name, description } = this.projectModel();
-          const project = await this.store.create({
-            name: name.trim(),
-            description: description.trim(),
-          });
-
-          this.close();
-          await this.router.navigate(['/projects', project.id]);
-        },
+        action: () => this.createProject(),
       },
     },
   );
@@ -70,5 +61,16 @@ export class ProjectDialog {
 
   protected reset(): void {
     this.projectForm().reset({ ...EMPTY_INPUT });
+  }
+
+  private async createProject(): Promise<void> {
+    const { name, description } = this.projectModel();
+    const project = await this.store.create({
+      name: name.trim(),
+      description: description.trim(),
+    });
+
+    this.close();
+    await this.router.navigate(['/projects', project.id]);
   }
 }
