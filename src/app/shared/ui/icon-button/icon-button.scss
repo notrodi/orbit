@@ -30,4 +30,16 @@
       color: var(--color-brand-stronger);
     }
   }
+
+  &.secondary {
+    color: var(--color-text-subtle);
+
+    &:enabled:hover {
+      color: var(--color-brand-default);
+    }
+
+    &:enabled:active {
+      color: var(--color-brand-strong);
+    }
+  }
 }
