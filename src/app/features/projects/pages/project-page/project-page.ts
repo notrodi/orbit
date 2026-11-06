@@ -1,11 +1,13 @@
 import { Component, computed, inject, input } from '@angular/core';
 import { ProjectsStore } from '@features/projects/projects-store';
+import { ProjectHeader } from '@features/projects/ui/project-header/project-header';
 
 @Component({
   selector: 'app-project-page',
+  imports: [ProjectHeader],
   template: `
     @if (project(); as project) {
-      <h1>{{ project.name }}</h1>
+      <app-project-header [project]="project"></app-project-header>
     }
   `,
 })

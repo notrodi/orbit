@@ -1,0 +1,60 @@
+@use 'typography' as *;
+
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-5);
+
+  padding: var(--size-5);
+  border-radius: var(--size-4);
+
+  background: var(--color-surface);
+}
+
+header {
+  display: flex;
+  gap: var(--size-8);
+  justify-content: space-between;
+}
+
+h1 {
+  @include heading-h1;
+
+  color: var(--color-text-strong);
+}
+
+p {
+  @include body-large;
+
+  margin-block-start: var(--size-2);
+  color: var(--color-text-default);
+}
+
+dl {
+  display: flex;
+  flex-shrink: 0;
+  gap: var(--size-5);
+}
+
+dt {
+  @include caption-large;
+
+  margin-block-end: var(--size-2);
+  color: var(--color-text-strong);
+  text-transform: uppercase;
+}
+
+dd {
+  @include body-medium;
+
+  min-inline-size: 11ch;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-text-default);
+  text-transform: lowercase;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
