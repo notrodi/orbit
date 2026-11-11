@@ -26,6 +26,26 @@ export class LocalStorageProjectsRepository extends ProjectsRepository {
     return project;
   }
 
+  override async issueTaskNumber(projectId: string): Promise<number> {
+    const projects = this.readProjects();
+    const targetProject = projects.find((project) => project.id === projectId);
+
+    if (!targetProject) {
+      throw new Error(`Project ${projectId} not found`);
+    }
+
+    const number = targetProject.lastTaskNumber + 1;
+
+    this.storage.write(
+      STORAGE_KEY,
+      projects.map((project) =>
+        project.id === projectId ? { ...project, lastTaskNumber: number } : project,
+      ),
+    );
+
+    return number;
+  }
+
   private readProjects(): Project[] {
     const data = this.storage.read(STORAGE_KEY);
 

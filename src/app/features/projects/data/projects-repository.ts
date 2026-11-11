@@ -8,4 +8,7 @@ export abstract class ProjectsRepository {
   abstract getAll(): Promise<Project[]>;
 
   abstract create(input: ProjectInput): Promise<Project>;
+
+  /** Increments the project's task counter and returns the new number. */
+  abstract issueTaskNumber(projectId: string): Promise<number>;
 }
