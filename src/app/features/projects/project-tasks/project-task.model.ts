@@ -25,3 +25,6 @@ export interface ProjectTask {
 }
 
 export type ProjectTaskInput = Pick<ProjectTask, 'title' | 'description' | 'priority'>;
+
+/** Data needed to create a task; the rest is assigned by the repository. */
+export type NewProjectTask = ProjectTaskInput & Pick<ProjectTask, 'projectId' | 'number'>;
