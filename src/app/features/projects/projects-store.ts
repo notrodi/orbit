@@ -21,6 +21,18 @@ export class ProjectsStore {
     return project;
   }
 
+  async issueTaskNumber(projectId: string): Promise<number> {
+    const number = await this.repository.issueTaskNumber(projectId);
+
+    this.state.update((projects) =>
+      projects.map((project) =>
+        project.id === projectId ? { ...project, lastTaskNumber: number } : project,
+      ),
+    );
+
+    return number;
+  }
+
   getById(id: string): Project | undefined {
     return this.state().find((project) => project.id === id);
   }
