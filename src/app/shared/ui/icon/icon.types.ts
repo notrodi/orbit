@@ -6,4 +6,5 @@ export type IconName =
   | 'wrench'
   | 'plus-square'
   | 'cross'
-  | 'pencil';
+  | 'pencil'
+  | 'chevrons-down';
