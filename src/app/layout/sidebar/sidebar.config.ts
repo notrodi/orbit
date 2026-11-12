@@ -2,8 +2,8 @@ import { NavItemConfig } from '@layout/sidebar/nav-item/nav-item.types';
 
 export const NAV_ITEMS: readonly NavItemConfig[] = [
   {
-    link: '/tasks',
-    label: 'Tasks',
+    link: '/todos',
+    label: 'To-dos',
     iconName: 'checklist',
     inDevelopment: true,
   },
