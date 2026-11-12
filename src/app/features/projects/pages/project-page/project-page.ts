@@ -1,14 +1,15 @@
 import { Component, computed, effect, inject, input } from '@angular/core';
 import { ProjectsStore } from '@features/projects/projects-store';
 import { TasksStore } from '@features/projects/tasks/tasks-store';
+import { TaskDialog } from '@features/projects/tasks/ui/task-dialog/task-dialog';
 import { ProjectHeader } from '@features/projects/ui/project-header/project-header';
 
 @Component({
   selector: 'app-project-page',
-  imports: [ProjectHeader],
+  imports: [ProjectHeader, TaskDialog],
   template: `
     @if (project(); as project) {
-      <app-project-header [project]="project"></app-project-header>
+      <app-project-header [project]="project" (createTask)="taskDialog.open()"></app-project-header>
 
       <ul>
         @for (task of tasks(); track task.id) {
@@ -16,6 +17,8 @@ import { ProjectHeader } from '@features/projects/ui/project-header/project-head
         }
       </ul>
     }
+
+    <app-task-dialog #taskDialog></app-task-dialog>
   `,
 })
 export class ProjectPage {

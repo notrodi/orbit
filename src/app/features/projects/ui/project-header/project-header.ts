@@ -1,5 +1,5 @@
 import { DatePipe } from '@angular/common';
-import { Component, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { Project } from '@features/projects/project.model';
 import { Button } from '@shared/ui/button/button';
 import { IconButton } from '@shared/ui/icon-button/icon-button';
@@ -34,7 +34,13 @@ import { IconButton } from '@shared/ui/icon-button/icon-button';
     </header>
 
     <footer>
-      <button type="button" appButton variant="primary" icon="plus-square" disabled>
+      <button
+        type="button"
+        appButton
+        variant="primary"
+        icon="plus-square"
+        (click)="createTask.emit()"
+      >
         Add new task
       </button>
 
@@ -52,4 +58,5 @@ import { IconButton } from '@shared/ui/icon-button/icon-button';
 })
 export class ProjectHeader {
   readonly project = input.required<Project>();
+  readonly createTask = output<void>();
 }
