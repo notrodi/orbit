@@ -1,13 +1,13 @@
 import { inject, Service, signal } from '@angular/core';
-import { ProjectTasksRepository } from '@features/projects/project-tasks/data/project-tasks-repository';
-import { ProjectTask, ProjectTaskInput } from '@features/projects/project-tasks/project-task.model';
 import { ProjectsStore } from '@features/projects/projects-store';
+import { TasksRepository } from '@features/projects/tasks/data/tasks-repository';
+import { Task, TaskInput } from '@features/projects/tasks/task.model';
 
 @Service()
-export class ProjectTasksStore {
-  private readonly repository = inject(ProjectTasksRepository);
+export class TasksStore {
+  private readonly repository = inject(TasksRepository);
   private readonly projectsStore = inject(ProjectsStore);
-  private readonly state = signal<readonly ProjectTask[]>([]);
+  private readonly state = signal<readonly Task[]>([]);
 
   private projectId: string | null = null;
 
@@ -24,7 +24,7 @@ export class ProjectTasksStore {
     }
   }
 
-  async create(input: ProjectTaskInput): Promise<ProjectTask> {
+  async create(input: TaskInput): Promise<Task> {
     const projectId = this.projectId;
 
     if (!projectId) {

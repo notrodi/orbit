@@ -1,6 +1,6 @@
 import { Component, computed, effect, inject, input } from '@angular/core';
-import { ProjectTasksStore } from '@features/projects/project-tasks/project-tasks-store';
 import { ProjectsStore } from '@features/projects/projects-store';
+import { TasksStore } from '@features/projects/tasks/tasks-store';
 import { ProjectHeader } from '@features/projects/ui/project-header/project-header';
 
 @Component({
@@ -22,12 +22,12 @@ export class ProjectPage {
   readonly projectId = input.required<string>();
 
   private readonly projectsStore = inject(ProjectsStore);
-  private readonly projectTasksStore = inject(ProjectTasksStore);
+  private readonly tasksStore = inject(TasksStore);
 
   protected readonly project = computed(() => this.projectsStore.getById(this.projectId()));
-  protected readonly tasks = this.projectTasksStore.tasks;
+  protected readonly tasks = this.tasksStore.tasks;
 
   constructor() {
-    effect(() => this.projectTasksStore.load(this.projectId()));
+    effect(() => this.tasksStore.load(this.projectId()));
   }
 }
