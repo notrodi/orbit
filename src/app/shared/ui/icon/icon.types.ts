@@ -8,4 +8,5 @@ export type IconName =
   | 'cross'
   | 'pencil'
   | 'chevrons-down'
-  | 'chevron-down';
+  | 'chevron-down'
+  | 'dots';
