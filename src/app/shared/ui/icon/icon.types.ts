@@ -7,4 +7,5 @@ export type IconName =
   | 'plus-square'
   | 'cross'
   | 'pencil'
-  | 'chevrons-down';
+  | 'chevrons-down'
+  | 'chevron-down';
