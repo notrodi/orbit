@@ -1,5 +1,9 @@
 @use 'typography' as *;
 
+:host {
+  display: contents;
+}
+
 dialog {
   inline-size: 30rem;
   padding: var(--size-5);
