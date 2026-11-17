@@ -1,0 +1,54 @@
+@use 'typography' as *;
+
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-1);
+
+  padding: var(--size-4);
+  border-radius: var(--size-3);
+
+  overflow-wrap: anywhere;
+
+  background: var(--color-surface);
+
+  header {
+    display: flex;
+    gap: var(--size-2);
+    align-items: center;
+
+    span {
+      @include caption-large;
+
+      color: var(--color-text-subtle);
+    }
+
+    button {
+      margin-inline-start: auto;
+    }
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-2);
+
+    h3 {
+      @include body-medium;
+
+      color: var(--color-text-strong);
+    }
+
+    p {
+      @include body-medium;
+
+      color: var(--color-text-default);
+    }
+
+    time {
+      @include caption-medium;
+
+      color: var(--color-text-subtle);
+    }
+  }
+}

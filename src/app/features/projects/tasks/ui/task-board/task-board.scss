@@ -1,0 +1,30 @@
+@use 'typography' as *;
+
+:host {
+  display: flex;
+  gap: var(--size-5);
+
+  section {
+    flex: 1;
+    min-inline-size: 0;
+
+    h2 {
+      @include heading-h2;
+
+      padding-block-end: var(--size-2);
+      border-block-end: var(--border-width) solid var(--color-border-default);
+      color: var(--color-text-default);
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: var(--size-3);
+      padding-block-start: var(--size-3);
+
+      li {
+        list-style: none;
+      }
+    }
+  }
+}
