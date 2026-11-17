@@ -1,7 +1,8 @@
 import { inject, Injectable } from '@angular/core';
 import { BrowserStorage } from '@core/storage/browser-storage';
 import { TasksRepository } from '@features/projects/tasks/data/tasks-repository';
-import { NewTask, Task } from '@features/projects/tasks/task.model';
+import { moveTask } from '@features/projects/tasks/task-position';
+import { NewTask, Task, TaskStatus } from '@features/projects/tasks/task.model';
 
 const STORAGE_KEY = 'orbit:tasks:v1';
 
@@ -14,16 +15,25 @@ export class LocalStorageTasksRepository extends TasksRepository {
   }
 
   override async create(input: NewTask): Promise<Task> {
-    const task: Task = {
+    const tasks = this.readTasks();
+    const todoCount = tasks.filter(
+      (task) => task.projectId === input.projectId && task.status === 'todo',
+    ).length;
+    const createdTask: Task = {
       ...input,
       id: crypto.randomUUID(),
       status: 'todo',
+      position: todoCount,
       createdAt: new Date().toISOString(),
     };
 
-    this.storage.write(STORAGE_KEY, [...this.readTasks(), task]);
+    this.storage.write(STORAGE_KEY, [...tasks, createdTask]);
 
-    return task;
+    return createdTask;
+  }
+
+  override async move(taskId: string, status: TaskStatus, index: number): Promise<void> {
+    this.storage.write(STORAGE_KEY, moveTask(this.readTasks(), taskId, status, index));
   }
 
   private readTasks(): Task[] {

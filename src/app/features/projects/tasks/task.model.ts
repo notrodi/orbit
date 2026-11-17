@@ -20,6 +20,9 @@ export interface Task {
 
   status: TaskStatus;
 
+  /** Order within the status column, starting with 0. */
+  position: number;
+
   priority: Priority;
 
   title: string;

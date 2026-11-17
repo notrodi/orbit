@@ -1,4 +1,5 @@
 import { Component, computed, input } from '@angular/core';
+import { byPosition } from '@features/projects/tasks/task-position';
 import { Task, TASK_STATUS_LABELS, TASK_STATUSES } from '@features/projects/tasks/task.model';
 import { TaskCard } from '@features/projects/tasks/ui/task-card/task-card';
 
@@ -29,7 +30,9 @@ export class TaskBoard {
     TASK_STATUSES.map((status) => ({
       status,
       label: TASK_STATUS_LABELS[status],
-      tasks: this.tasks().filter((task) => task.status === status),
+      tasks: this.tasks()
+        .filter((task) => task.status === status)
+        .sort(byPosition),
     })),
   );
 }

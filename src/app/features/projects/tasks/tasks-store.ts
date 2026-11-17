@@ -1,7 +1,8 @@
 import { inject, Service, signal } from '@angular/core';
 import { ProjectsStore } from '@features/projects/projects-store';
 import { TasksRepository } from '@features/projects/tasks/data/tasks-repository';
-import { Task, TaskInput } from '@features/projects/tasks/task.model';
+import { moveTask } from '@features/projects/tasks/task-position';
+import { Task, TaskInput, TaskStatus } from '@features/projects/tasks/task.model';
 
 @Service()
 export class TasksStore {
@@ -39,5 +40,22 @@ export class TasksStore {
     }
 
     return createdTask;
+  }
+
+  async move(taskId: string, status: TaskStatus, index: number): Promise<void> {
+    const projectId = this.projectId;
+    const previousTasks = this.state();
+
+    this.state.set(moveTask(previousTasks, taskId, status, index));
+
+    try {
+      await this.repository.move(taskId, status, index);
+    } catch (error) {
+      if (this.projectId === projectId) {
+        this.state.set(previousTasks);
+      }
+
+      throw error;
+    }
   }
 }
