@@ -1,0 +1,6 @@
+// While a card is dragged, CDK keeps its preview in <body> with pointer-events: none,
+// so the cursor would come from whatever is under it
+body:has(> .cdk-drag-preview),
+body:has(> .cdk-drag-preview) * {
+  cursor: grabbing !important;
+}

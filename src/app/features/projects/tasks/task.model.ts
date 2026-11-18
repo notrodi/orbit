@@ -37,3 +37,12 @@ export type TaskInput = Pick<Task, 'title' | 'description' | 'priority'>;
 
 /** Data needed to create a task; the rest is assigned by the repository. */
 export type NewTask = TaskInput & Pick<Task, 'projectId' | 'number'>;
+
+/** Where a task was dropped on the board. */
+export interface TaskMove {
+  taskId: string;
+
+  status: TaskStatus;
+
+  index: number;
+}

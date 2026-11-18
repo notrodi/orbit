@@ -2,10 +2,13 @@
 
 :host {
   display: flex;
+  flex: 1;
   gap: var(--size-5);
 
   section {
+    display: flex;
     flex: 1;
+    flex-direction: column;
     min-inline-size: 0;
 
     h2 {
@@ -18,13 +21,31 @@
 
     ul {
       display: flex;
+      flex: 1;
       flex-direction: column;
       gap: var(--size-3);
-      padding-block-start: var(--size-3);
 
-      li {
-        list-style: none;
-      }
+      padding-block-start: var(--size-3);
     }
   }
+}
+
+// Not nested in :host: CDK moves the drag preview into <body>
+li {
+  cursor: grab;
+  list-style: none;
+}
+
+.cdk-drag-preview {
+  border-radius: var(--size-3);
+  box-shadow: var(--shadow-1);
+}
+
+.cdk-drag-placeholder {
+  opacity: 0.5;
+}
+
+.cdk-drag-animating,
+.cdk-drop-list-dragging li:not(.cdk-drag-placeholder) {
+  transition: transform 0.3s cubic-bezier(0, 0, 0.2, 1);
 }

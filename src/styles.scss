@@ -5,6 +5,7 @@
 @use 'sizes';
 @use 'borders';
 @use 'layout';
+@use 'drag-drop';
 
 html {
   background: var(--color-background);
