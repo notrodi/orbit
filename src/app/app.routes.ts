@@ -25,7 +25,7 @@ export const routes: Routes = [
     path: 'under-construction',
     title: 'Under construction | Orbit',
     loadComponent: () =>
-      import('./pages/under-construction/under-construction').then((m) => m.UnderConstruction),
+      import('@pages/under-construction/under-construction').then((m) => m.UnderConstruction),
   },
   {
     path: '**',
