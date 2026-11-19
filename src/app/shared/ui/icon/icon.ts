@@ -1,5 +1,5 @@
 import { Component, computed, input } from '@angular/core';
-import { IconName } from './icon.types';
+import { IconName } from '@shared/ui/icon/icon.types';
 
 @Component({
   selector: 'app-icon',
