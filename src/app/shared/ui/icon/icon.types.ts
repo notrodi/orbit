@@ -9,4 +9,5 @@ export type IconName =
   | 'pencil'
   | 'chevrons-down'
   | 'chevron-down'
-  | 'dots';
+  | 'dots'
+  | 'stars';
