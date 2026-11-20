@@ -7,7 +7,5 @@ export const projectExistsGuard: CanActivateFn = (route) => {
   const router = inject(Router);
   const projectId = route.paramMap.get('projectId');
 
-  return projectId && store.getById(projectId)
-    ? true
-    : new RedirectCommand(router.createUrlTree(['/projects']));
+  return projectId && store.getById(projectId) ? true : new RedirectCommand(router.parseUrl('/'));
 };

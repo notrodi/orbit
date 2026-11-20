@@ -1,6 +1,9 @@
+import { inject } from '@angular/core';
 import { Routes } from '@angular/router';
 import { desktopOnlyGuard } from '@core/guards/desktop-only-guard';
+import { ProjectsStore } from '@features/projects/projects-store';
 import { Shell } from '@layout/shell/shell';
+import { emptyAppGuard } from '@pages/welcome/routing/empty-app-guard';
 import { isTouchDevice } from '@shared/utils/is-touch-device';
 
 export const routes: Routes = [
@@ -12,7 +15,14 @@ export const routes: Routes = [
       {
         path: '',
         pathMatch: 'full',
-        redirectTo: 'projects',
+        canMatch: [emptyAppGuard],
+        title: 'Welcome | Orbit',
+        loadComponent: () => import('@pages/welcome/welcome').then((m) => m.Welcome),
+      },
+      {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: () => `/projects/${inject(ProjectsStore).projects()[0].id}`,
       },
       {
         path: 'projects',

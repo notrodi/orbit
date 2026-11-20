@@ -1,0 +1,42 @@
+@use 'typography' as *;
+
+:host {
+  header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-2);
+    margin-block-end: var(--size-5);
+
+    h1 {
+      @include heading-h1;
+    }
+
+    p {
+      @include label-large;
+
+      color: var(--color-text-default);
+    }
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-3);
+
+    h2 {
+      @include body-medium;
+
+      color: var(--color-text-strong);
+    }
+
+    div {
+      display: flex;
+      flex-direction: row;
+      gap: var(--size-5);
+
+      app-action-card {
+        flex: 1;
+      }
+    }
+  }
+}
