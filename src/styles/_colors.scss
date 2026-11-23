@@ -26,13 +26,16 @@
   --green-100: #c8d9cf;
   --orange-100: #f2994a;
   --red-100: #eb5757;
+  --red-200: #dc322f;
+  --red-300: #b42320;
+  --red-400: #8f1c19;
 }
 
 // semantic
 :root {
   // Scales:
   // - neutral (text, border): by visibility on the background, each step more visible
-  // - brand (surface-brand-*, text-brand-*, brand): by saturation, each step darker
+  // - brand (surface-brand-*, text-brand-*, brand), danger: by saturation, each step darker
 
   // surface
   --color-background: var(--gray-300);
@@ -66,6 +69,11 @@
 
   // status
   --color-error: var(--red-100);
+
+  // danger
+  --color-danger-default: var(--red-200);
+  --color-danger-strong: var(--red-300);
+  --color-danger-stronger: var(--red-400);
 
   // priority
   --color-priority-low: var(--green-100);

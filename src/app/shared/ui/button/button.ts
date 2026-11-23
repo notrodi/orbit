@@ -2,7 +2,7 @@ import { Component, input } from '@angular/core';
 import { Icon } from '@shared/ui/icon/icon';
 import { IconName } from '@shared/ui/icon/icon.types';
 
-type ButtonVariant = 'default' | 'primary';
+type ButtonVariant = 'default' | 'primary' | 'danger';
 
 @Component({
   selector: 'button[appButton]',

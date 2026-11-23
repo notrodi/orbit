@@ -46,4 +46,17 @@
       background: var(--color-brand-stronger);
     }
   }
+
+  &.danger {
+    color: var(--color-text-strong);
+    background: var(--color-danger-default);
+
+    &:enabled:hover {
+      background: var(--color-danger-strong);
+    }
+
+    &:enabled:active {
+      background: var(--color-danger-stronger);
+    }
+  }
 }
