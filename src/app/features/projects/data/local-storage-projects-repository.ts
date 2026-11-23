@@ -46,6 +46,14 @@ export class LocalStorageProjectsRepository extends ProjectsRepository {
     return number;
   }
 
+  override async addMany(projects: readonly Project[]): Promise<void> {
+    this.storage.write(STORAGE_KEY, [...this.readProjects(), ...projects]);
+  }
+
+  override async deleteAll(): Promise<void> {
+    this.storage.write(STORAGE_KEY, []);
+  }
+
   private readProjects(): Project[] {
     const data = this.storage.read(STORAGE_KEY);
 

@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
+import { DemoData } from '@core/demo/demo-data';
 import { ProjectDialog } from '@features/projects/ui/project-dialog/project-dialog';
 import { ActionCard } from '@pages/welcome/ui/action-card/action-card';
 import { Button } from '@shared/ui/button/button';
@@ -22,7 +24,9 @@ import { Button } from '@shared/ui/button/button';
           heading="Explore with demo data"
           description="Fill Orbit with sample data to see every feature in action. You can clear it anytime in one click."
         >
-          <button type="button" appButton variant="primary" disabled>Add demo data</button>
+          <button type="button" appButton variant="primary" (click)="addDemoData()">
+            Add demo data
+          </button>
         </app-action-card>
 
         <app-action-card
@@ -39,4 +43,12 @@ import { Button } from '@shared/ui/button/button';
   `,
   styleUrl: './welcome.scss',
 })
-export class Welcome {}
+export class Welcome {
+  private readonly demoData = inject(DemoData);
+  private readonly router = inject(Router);
+
+  protected async addDemoData(): Promise<void> {
+    await this.demoData.load();
+    await this.router.navigateByUrl('/', { onSameUrlNavigation: 'reload' });
+  }
+}

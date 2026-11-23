@@ -36,6 +36,14 @@ export class LocalStorageTasksRepository extends TasksRepository {
     this.storage.write(STORAGE_KEY, moveTask(this.readTasks(), taskId, status, index));
   }
 
+  override async addMany(tasks: readonly Task[]): Promise<void> {
+    this.storage.write(STORAGE_KEY, [...this.readTasks(), ...tasks]);
+  }
+
+  override async deleteAll(): Promise<void> {
+    this.storage.write(STORAGE_KEY, []);
+  }
+
   private readTasks(): Task[] {
     const data = this.storage.read(STORAGE_KEY);
 

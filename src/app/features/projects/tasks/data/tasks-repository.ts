@@ -10,4 +10,12 @@ export abstract class TasksRepository {
   abstract create(task: NewTask): Promise<Task>;
 
   abstract move(taskId: string, status: TaskStatus, index: number): Promise<void>;
+
+  /**
+   * Saves ready-made tasks as they are; unlike `create`, assigns nothing.
+   * The caller keeps `position` and `number` consistent.
+   */
+  abstract addMany(tasks: readonly Task[]): Promise<void>;
+
+  abstract deleteAll(): Promise<void>;
 }
