@@ -1,0 +1,32 @@
+:host {
+  --sidebar-inset-inline: var(--size-5);
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-8);
+}
+
+app-logo {
+  margin-inline: var(--sidebar-inset-inline);
+}
+
+app-project-nav {
+  &::after {
+    content: '';
+
+    display: block;
+
+    margin-block: var(--size-2);
+    margin-inline: var(--sidebar-inset-inline);
+    border-block-end: var(--border-width) solid var(--color-border-default);
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+footer {
+  margin-block-start: auto;
+  padding-inline: var(--size-3);
+}

@@ -1,3 +1,8 @@
+// theme
+:root {
+  color-scheme: dark;
+}
+
 // primitives
 :root {
   // gray
@@ -6,6 +11,9 @@
   --gray-200: #6b6b6b;
   --gray-300: #333333;
   --gray-400: #2c2c2c;
+  --gray-500: #000000;
+  --gray-500-40: color-mix(in srgb, var(--gray-500) 40%, transparent);
+  --gray-500-25: color-mix(in srgb, var(--gray-500) 25%, transparent);
 
   // purple
   --purple-100: #bfb2ff;
@@ -18,34 +26,54 @@
   --green-100: #c8d9cf;
   --orange-100: #f2994a;
   --red-100: #eb5757;
+  --red-200: #dc322f;
+  --red-300: #b42320;
+  --red-400: #8f1c19;
 }
 
 // semantic
 :root {
+  // Scales:
+  // - neutral (text, border): by visibility on the background, each step more visible
+  // - brand (surface-brand-*, text-brand-*, brand), danger: by saturation, each step darker
+
   // surface
   --color-background: var(--gray-300);
   --color-surface: var(--gray-400);
-  --color-surface-hover: var(--purple-100-20);
-  --color-surface-active: var(--purple-100-40);
+  --color-surface-brand-default: var(--purple-100-20);
+  --color-surface-brand-strong: var(--purple-100-40);
+
+  // overlay
+  --color-overlay: var(--gray-500-40);
 
   // text
-  --color-text-primary: var(--gray-000);
-  --color-text-secondary: var(--gray-100);
-  --color-text-tertiary: var(--gray-200);
-  --color-text-brand: var(--purple-100);
+  --color-text-subtle: var(--gray-200);
+  --color-text-default: var(--gray-100);
+  --color-text-strong: var(--gray-000);
+  --color-text-inverse-default: var(--gray-300);
+  --color-text-inverse-strong: var(--gray-400);
+  --color-text-brand-default: var(--purple-100);
+  --color-text-brand-strong: var(--purple-200);
 
   // border
-  --color-border-button: var(--gray-100);
-  --color-border-input: var(--gray-200);
+  --color-border-subtle: var(--gray-200);
+  --color-border-default: var(--gray-100);
 
   // focus
   --color-focus-ring: var(--purple-100);
 
   // brand
   --color-brand-default: var(--purple-100);
-  --color-brand-hover: var(--purple-200);
-  --color-brand-active: var(--purple-300);
-  --color-brand-disabled: var(--purple-100-40);
+  --color-brand-strong: var(--purple-200);
+  --color-brand-stronger: var(--purple-300);
+
+  // status
+  --color-error: var(--red-100);
+
+  // danger
+  --color-danger-default: var(--red-200);
+  --color-danger-strong: var(--red-300);
+  --color-danger-stronger: var(--red-400);
 
   // priority
   --color-priority-low: var(--green-100);

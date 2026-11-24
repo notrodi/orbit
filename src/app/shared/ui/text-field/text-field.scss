@@ -1,0 +1,50 @@
+@use 'typography' as *;
+@use 'a11y' as *;
+
+:host {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-1);
+}
+
+label {
+  @include label-medium;
+
+  color: var(--color-text-default);
+}
+
+input,
+textarea {
+  @include caption-large;
+
+  padding: var(--size-3);
+  border: var(--border-width) solid var(--color-border-subtle);
+  border-radius: var(--size-2);
+  transition: border-color 0.2s;
+
+  &:hover {
+    border-color: var(--color-border-default);
+  }
+
+  &:focus-visible {
+    @include focus-ring($inset: true);
+  }
+
+  &[aria-invalid='true'] {
+    border-color: var(--color-error);
+  }
+}
+
+textarea {
+  resize: vertical;
+}
+
+p {
+  @include caption-medium;
+
+  position: absolute;
+  inset-block-start: 100%;
+  margin-block-start: var(--size-1);
+  color: var(--color-error);
+}

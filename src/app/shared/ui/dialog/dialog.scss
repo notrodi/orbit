@@ -1,0 +1,52 @@
+@use 'typography' as *;
+
+:host {
+  display: contents;
+}
+
+dialog {
+  inline-size: 30rem;
+  padding: var(--size-5);
+  border-radius: var(--size-3);
+
+  color: var(--color-text-strong);
+
+  background: var(--color-surface);
+  box-shadow: var(--shadow-1);
+
+  &::backdrop {
+    background-color: var(--color-overlay);
+    backdrop-filter: blur(4px);
+  }
+
+  &,
+  &::backdrop {
+    opacity: 0;
+    transition:
+      opacity 0.2s,
+      display 0.2s allow-discrete,
+      overlay 0.2s allow-discrete;
+  }
+
+  &[open],
+  &[open]::backdrop {
+    opacity: 1;
+
+    @starting-style {
+      opacity: 0;
+    }
+  }
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  // Space below the header; consumers may override --dialog-gap
+  margin-block-end: var(--dialog-gap, var(--size-6));
+}
+
+h2 {
+  @include heading-h2;
+}

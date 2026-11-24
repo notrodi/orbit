@@ -1,0 +1,17 @@
+:host {
+  display: inline-flex;
+
+  &.low {
+    color: var(--color-priority-low);
+  }
+
+  &.medium {
+    rotate: -90deg;
+    color: var(--color-priority-medium);
+  }
+
+  &.high {
+    rotate: 180deg;
+    color: var(--color-priority-high);
+  }
+}
