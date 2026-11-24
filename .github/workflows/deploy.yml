@@ -23,6 +23,7 @@ jobs:
         with:
           node-version: 22
           cache: npm
+      - run: npm install --global npm@12.2.3
       - run: npm ci
       - run: npm run build
       - run: cp dist/orbit/browser/index.html dist/orbit/browser/404.html
