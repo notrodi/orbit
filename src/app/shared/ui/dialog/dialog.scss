@@ -42,7 +42,9 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-block-end: var(--size-6);
+
+  // Space below the header; consumers may override --dialog-gap
+  margin-block-end: var(--dialog-gap, var(--size-6));
 }
 
 h2 {
