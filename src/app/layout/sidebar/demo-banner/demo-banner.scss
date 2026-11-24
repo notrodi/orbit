@@ -1,0 +1,43 @@
+@use 'typography' as *;
+
+:host {
+  display: flex;
+  flex-direction: column;
+
+  padding: var(--size-3);
+  border: var(--border-width) solid var(--color-brand-default);
+  border-radius: var(--size-3);
+
+  > p {
+    @include body-medium;
+
+    margin-block: var(--size-3) var(--size-4);
+    color: var(--color-text-default);
+  }
+}
+
+h2 {
+  @include label-large;
+
+  display: flex;
+  gap: var(--size-2);
+  align-items: center;
+  color: var(--color-text-strong);
+}
+
+app-dialog {
+  --dialog-gap: var(--size-4);
+
+  p {
+    @include body-large;
+
+    margin-block-end: var(--size-4);
+    color: var(--color-text-default);
+  }
+}
+
+footer {
+  display: flex;
+  gap: var(--size-2);
+  justify-content: end;
+}
