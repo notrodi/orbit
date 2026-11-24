@@ -13,28 +13,28 @@
   &.highlighted {
     border-color: var(--color-brand-default);
   }
+}
 
-  header {
-    display: flex;
-    gap: var(--size-3);
-    align-items: center;
-    color: var(--color-text-strong);
+header {
+  display: flex;
+  gap: var(--size-3);
+  align-items: center;
+  color: var(--color-text-strong);
+}
 
-    h3 {
-      @include heading-h2;
-    }
-  }
+h3 {
+  @include heading-h2;
+}
 
-  p {
-    @include body-large;
+p {
+  @include body-large;
 
-    margin-block: var(--size-3) var(--size-4);
-    color: var(--color-text-default);
-  }
+  margin-block: var(--size-3) var(--size-4);
+  color: var(--color-text-default);
+}
 
-  footer {
-    display: flex;
-    justify-content: end;
-    margin-block-start: auto;
-  }
+footer {
+  display: flex;
+  justify-content: end;
+  margin-block-start: auto;
 }

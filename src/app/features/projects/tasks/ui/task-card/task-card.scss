@@ -11,44 +11,44 @@
   overflow-wrap: anywhere;
 
   background: var(--color-surface);
+}
 
-  header {
-    display: flex;
-    gap: var(--size-2);
-    align-items: center;
+header {
+  display: flex;
+  gap: var(--size-2);
+  align-items: center;
+}
 
-    span {
-      @include caption-large;
+span {
+  @include caption-large;
 
-      color: var(--color-text-subtle);
-    }
+  color: var(--color-text-subtle);
+}
 
-    button {
-      margin-inline-start: auto;
-    }
-  }
+button {
+  margin-inline-start: auto;
+}
 
-  div {
-    display: flex;
-    flex-direction: column;
-    gap: var(--size-2);
+div {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-2);
+}
 
-    h3 {
-      @include body-medium;
+h3 {
+  @include body-medium;
 
-      color: var(--color-text-strong);
-    }
+  color: var(--color-text-strong);
+}
 
-    p {
-      @include body-medium;
+p {
+  @include body-medium;
 
-      color: var(--color-text-default);
-    }
+  color: var(--color-text-default);
+}
 
-    time {
-      @include caption-medium;
+time {
+  @include caption-medium;
 
-      color: var(--color-text-subtle);
-    }
-  }
+  color: var(--color-text-subtle);
 }

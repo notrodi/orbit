@@ -5,87 +5,87 @@
   display: flex;
   flex-direction: column;
   gap: var(--size-1);
+}
 
-  label {
-    @include label-medium;
+label {
+  @include label-medium;
 
-    color: var(--color-text-default);
+  color: var(--color-text-default);
+}
+
+.trigger {
+  @include caption-large;
+
+  display: flex;
+  gap: var(--size-4);
+  align-items: center;
+  justify-content: space-between;
+
+  padding: var(--size-3);
+  border: var(--border-width) solid var(--color-border-subtle);
+  border-radius: var(--size-2);
+
+  color: var(--color-text-strong);
+
+  transition: border-color 0.2s;
+
+  &:hover,
+  &:has(+ ul:popover-open) {
+    border-color: var(--color-border-default);
   }
 
-  .trigger {
-    @include caption-large;
+  &:focus-visible {
+    @include focus-ring($inset: true);
+  }
+}
 
-    display: flex;
-    gap: var(--size-4);
-    align-items: center;
-    justify-content: space-between;
+app-icon {
+  color: var(--color-text-default);
+  transition: rotate 0.2s;
+}
 
-    padding: var(--size-3);
-    border: var(--border-width) solid var(--color-border-subtle);
-    border-radius: var(--size-2);
+.trigger:has(+ ul:popover-open) app-icon {
+  rotate: 180deg;
+}
 
-    color: var(--color-text-strong);
+span {
+  display: flex;
+  gap: var(--size-2);
+  align-items: center;
+}
 
-    transition: border-color 0.2s;
+ul {
+  inset: auto;
+  position-area: block-end;
 
-    &:hover,
-    &:has(+ ul:popover-open) {
-      border-color: var(--color-border-default);
-    }
+  inline-size: anchor-size(inline);
+  margin-block-start: var(--size-1);
+  border: var(--border-width) solid var(--color-border-subtle);
+  border-radius: var(--size-2);
 
-    &:focus-visible {
-      @include focus-ring($inset: true);
-    }
+  color: var(--color-text-strong);
+  list-style: none;
 
-    app-icon {
-      color: var(--color-text-default);
-      transition: rotate 0.2s;
-    }
+  background: var(--color-surface);
+}
 
-    &:has(+ ul:popover-open) app-icon {
-      rotate: 180deg;
-    }
+li button {
+  @include caption-large;
+
+  display: flex;
+  inline-size: 100%;
+  padding: var(--size-3);
+  transition: background 0.2s;
+
+  &[aria-current='true'] {
+    background: var(--color-surface-brand-default);
   }
 
-  span {
-    display: flex;
-    gap: var(--size-2);
-    align-items: center;
+  &:hover {
+    background: var(--color-surface-brand-strong);
   }
 
-  ul {
-    inset: auto;
-    position-area: block-end;
-
-    inline-size: anchor-size(inline);
-    margin-block-start: var(--size-1);
-    border: var(--border-width) solid var(--color-border-subtle);
-    border-radius: var(--size-2);
-
-    color: var(--color-text-strong);
-    list-style: none;
-
-    background: var(--color-surface);
-
-    li button {
-      @include caption-large;
-
-      display: flex;
-      inline-size: 100%;
-      padding: var(--size-3);
-      transition: background 0.2s;
-
-      &[aria-current='true'] {
-        background: var(--color-surface-brand-default);
-      }
-
-      &:hover {
-        background: var(--color-surface-brand-strong);
-      }
-
-      &:focus-visible {
-        @include focus-ring($inset: true);
-      }
-    }
+  &:focus-visible {
+    @include focus-ring($inset: true);
   }
 }

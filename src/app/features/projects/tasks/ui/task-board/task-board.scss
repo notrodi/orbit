@@ -4,33 +4,32 @@
   display: flex;
   flex: 1;
   gap: var(--size-5);
-
-  section {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    min-inline-size: 0;
-
-    h2 {
-      @include heading-h2;
-
-      padding-block-end: var(--size-2);
-      border-block-end: var(--border-width) solid var(--color-border-default);
-      color: var(--color-text-default);
-    }
-
-    ul {
-      display: flex;
-      flex: 1;
-      flex-direction: column;
-      gap: var(--size-3);
-
-      padding-block-start: var(--size-3);
-    }
-  }
 }
 
-// Not nested in :host: CDK moves the drag preview into <body>
+section {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-inline-size: 0;
+}
+
+h2 {
+  @include heading-h2;
+
+  padding-block-end: var(--size-2);
+  border-block-end: var(--border-width) solid var(--color-border-default);
+  color: var(--color-text-default);
+}
+
+ul {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--size-3);
+
+  padding-block-start: var(--size-3);
+}
+
 li {
   cursor: grab;
   list-style: none;
